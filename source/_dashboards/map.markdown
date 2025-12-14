@@ -150,6 +150,12 @@ focus:
   default: true
   description: When set to `false`, this entity will not be considered for determining the default zoom or fit of the map.
   type: boolean
+badge:
+  required: false
+  default: true
+  description: Badge to display an additional information. [See below](#options_for_marker_badges).
+  type: map
+  
 {% endconfiguration %}
 
 ## Options for geolocation sources:
@@ -179,6 +185,31 @@ focus:
   default: true
   description: When set to `false`, the entities of this source will not be considered for determining the default zoom or fit of the map.
   type: boolean
+badge:
+  required: false
+  default: true
+  description: Badge to display an additional information. [See below](#options_for_marker_badges).
+  type: map
+{% endconfiguration %}
+
+## Options for marker badges
+
+Marker badges can be used to show an image, an icon, a text label, an entity state's or attrubute's value.
+
+{% configuration %}
+entity:
+  required: false
+  description: Entity ID.
+  type: string
+label_mode:
+  required: false
+  default: name
+  description: When set to `icon`, renders the entity's icon in the marker. When set to `image`, renders the entity's entity_picture in the marker.When set to `state` or `attribute`, renders the entity's state or attribute as the label for the map marker instead of the entity's name.
+  type: string
+attribute:
+  required: false
+  description: An entity's attribute when `label_mode` set to `attribute`.
+  type: string
 {% endconfiguration %}
 
 ## Examples
